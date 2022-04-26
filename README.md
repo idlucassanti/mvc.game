@@ -4,7 +4,7 @@ Projeto simples utilizando recursos básicos do ASPNET MVC apenas para entender 
 
 ## Recursos
 
-Arquitetura: MVC Básica
+> Arquitetura: MVC Básica
 Camadas: Única
 Entidades: Não
 Modelos: Sim
