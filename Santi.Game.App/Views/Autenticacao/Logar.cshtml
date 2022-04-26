@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+<form method="post" action="/autenticacao/logar">
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu e-mail" value="@ViewBag.Usuario.Email">
+        @Html.ValidationMessage("email")
+    </div>
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="text" class="form-control" id="senha" name="senha" placeholder="Digite sua Senha" value="@ViewBag.Usuario.Senha">
+        @Html.ValidationMessage("senha")
+    </div>
+
+    <span><b>@ViewBag.MensagemErroLogin</b></span>
+             
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>

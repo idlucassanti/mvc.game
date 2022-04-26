@@ -1,0 +1,40 @@
+﻿@model List<Palavra>
+
+@{
+    ViewData["Title"] = "Jogo de Palavras";
+}
+
+<div>
+    <h1>Listagem de Palavras</h1>
+    <a href="/main/criar" class="btn btn-primary">Nova Palavra</a>
+</div>
+<div>
+    <span><b>total de registros: @Model.Count</b></span>
+    <div>
+        @ViewBag.MensagemErroRemover
+    </div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Nível</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.Nivel</td>
+                    <td>
+                        <a href="/main/atualizar/@item.Id" class="btn">Editar</a>
+                        <a href="/main/remover/@item.Id" class="btn">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
